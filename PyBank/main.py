@@ -49,9 +49,6 @@ with open(csvpath) as csvfile:
     print(f"Greatest Increase in Profits: {GreatestIncreaseMonth} (${GreatestIncrease})")
     print(f"Greatest Increase in Profits: {GreatestDecreaseMonth} (${GreatestDecrease})")
 
-'''
-Export to Text File
-''' 
 output_path = os.path.join("PyBank/Analysis","PyBank_Analysis.txt")
 
 with open(output_path, 'w') as text:
