@@ -81,8 +81,10 @@ with open(csvpath) as csvfile:
 '''
 Export to Text File
 ''' 
+# Directory Path to Output Text File
 output_path = os.path.join("PyPoll/Analysis","PyPoll_Analysis.txt")
 
+# Write Text File
 with open(output_path, 'w') as text:
     text.write("Election Results" + "\n")
     text.write("-------------------------" + "\n")
