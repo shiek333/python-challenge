@@ -51,4 +51,20 @@ with open(csvpath) as csvfile:
     print("-------------------------")
     print(f"Winner: {candidate_dict['name'][0]}")
     print("-------------------------")
+
+'''
+Export to Text File
+''' 
+output_path = os.path.join("PyPoll/Analysis","PyPoll_Analysis.txt")
+
+with open(output_path, 'w') as text:
+    text.write("Election Results" + "\n")
+    text.write("-------------------------" + "\n")
+    text.write(f"Total Votes: {TotalVotes}" + "\n")
+    text.write("-------------------------" + "\n")
+    for n in range(len(votedCandidates)):
+        text.write(f"{candidate_dict['name'][n]}: {candidate_dict['votePercent'][n]}% ({candidate_dict['votes'][n]})" + "\n")
+    text.write("-------------------------" + "\n")
+    text.write(f"Winner: {candidate_dict['name'][0]}" + "\n")
+    text.write("-------------------------" + "\n")
     
