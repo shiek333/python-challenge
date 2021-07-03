@@ -17,3 +17,4 @@ Python-Challenge is a project to create python scripts for analyzing financial a
 1. Open python or Jupyter notebook
 2. Copy and paste script from: *PyPoll_Analysis.txt* or *PyBank_Analysis.txt*
 3. Input the correct path to open data file: *election_data.csv* or *budget_data.csv*
+4. Run script
