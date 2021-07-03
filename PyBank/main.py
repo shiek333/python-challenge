@@ -34,8 +34,10 @@ with open(csvpath) as csvfile:
         averageChange = round(sum(totalDifference)/len(firstProfit),2)
         return averageChange
     AverageChange = averageChange()
-    GreatestIncrease = 1
-    GreatestDecrease = 1
+    GreatestIncrease = max(totalDifference)
+    GreatestIncreaseMonth = months[totalDifference.index(GreatestIncrease)+1]
+    GreatestDecrease = min(totalDifference)
+    GreatestDecreaseMonth = months[totalDifference.index(GreatestDecrease)+1]
 
     #Print Financial Analysis Summary Table
     print("Financial Analysis")
@@ -43,7 +45,19 @@ with open(csvpath) as csvfile:
     print(f"Total Months: {TotalMonths}")
     print(f"Total: {TotalProfits}")
     print(f"Average Change: ${AverageChange}")
-    print(f"Greatest Increase in Profits: {GreatestIncrease}")
-    print(f"Greatest Increase in Profits: {GreatestDecrease}")
+    print(f"Greatest Increase in Profits: {GreatestIncreaseMonth} (${GreatestIncrease})")
+    print(f"Greatest Increase in Profits: {GreatestDecreaseMonth} (${GreatestDecrease})")
 
+'''
+Export to Text File
+''' 
+output_path = os.path.join("PyBank/Analysis","PyBank_Analysis.txt")
 
+with open(output_path, 'w') as text:
+    text.write("Financial Analysis" + "\n")
+    text.write("----------------------------" + "\n")
+    text.write(f"Total Months: {TotalMonths}" + "\n")
+    text.write(f"Total: {TotalProfits}" + "\n")
+    text.write(f"Average Change: ${AverageChange}" + "\n")
+    text.write(f"Greatest Increase in Profits: {GreatestIncreaseMonth} (${GreatestIncrease})" + "\n")
+    text.write(f"Greatest Increase in Profits: {GreatestDecreaseMonth} (${GreatestDecrease})" + "\n")
