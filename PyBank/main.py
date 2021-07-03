@@ -8,6 +8,7 @@ csvpath = os.path.join("PyBank/Resources","budget_data.csv")
 
 with open(csvpath) as csvfile:
     banks = csv.reader(csvfile, delimiter=',')
+    header = next(banks)
     next(banks)
     months = []
     profits = []

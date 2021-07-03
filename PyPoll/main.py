@@ -8,6 +8,7 @@ csvpath = os.path.join("PyPoll/Resources","election_data.csv")
 
 with open(csvpath) as csvfile:
     election = csv.reader(csvfile, delimiter=',')
+    header = next(election)
     next(election)
     ID = []
     county = []
