@@ -26,9 +26,6 @@ with open(csvpath) as csvfile:
         secondProfit.append(int(row[1]))
 
     ### Financial Data Analysis of Total Months, Total Profits, Average Change, and Greatest Increase/Decrease Number and Date Values
-    TotalMonths = len(months)
-    TotalProfits = sum(profits)
-
     def averageChange():
         """
         Calculate the Average Change of profits/posses over the time periods, using two same length lists with an offset of a month difference and then append the difference to a new list, and then use the new list of differences to calculate the average changes over the time periods
@@ -40,8 +37,10 @@ with open(csvpath) as csvfile:
             totalDifference.append(difference)
         averageChange = round(sum(totalDifference)/len(firstProfit),2)
         return averageChange
+    
+    TotalMonths = len(months)
+    TotalProfits = sum(profits)
     AverageChange = averageChange()
-
     GreatestIncrease = max(totalDifference)
     GreatestIncreaseMonth = months[totalDifference.index(GreatestIncrease)+1]
     GreatestDecrease = min(totalDifference)
